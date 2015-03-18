@@ -22,7 +22,7 @@ $statuses = [
 class StatusesController < Phase6::ControllerBase
   def index
     statuses = $statuses.select do |s|
-      s[:cat_id] == Integer(params[:cat_id])
+      s[:cat_id] == Integer(params["cat_id"])
     end
 
     render_content(statuses.to_s, "text/text")
